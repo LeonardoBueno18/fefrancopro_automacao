@@ -1,0 +1,86 @@
+.white-text {
+  color: rgb(0, 0, 0) !important;
+}
+.blue.lighten-1 {
+  background-color: #0f0000 !important;
+}
+.blue.lighten-3 {
+  background-color: #0c0000 !important;
+}
+body {
+  font-family: roboto;
+  letter-spacing: 1px;
+}
+.tabs {
+  margin: 0.5px auto;
+}
+.blue.lighten-5 {
+  background-color: #070000 !important;
+}
+.blue.lighten-4 {
+  background-color: #080000 !important;
+}
+.container {
+  color: rgb(0, 0, 0);
+}
+.page-footer .footer-copyright {
+  color: rgba(138, 138, 138, 0.8);
+  border-top: 1px solid !important;
+}
+span.badge.new {
+  background-color: #050000 !important;
+  border: 1px solid;
+  color: rgb(0, 0, 0);
+}
+td,
+th {
+  border-radius: 0px;
+}
+.select-wrapper span.caret {
+  color: #000000;
+}
+.dataTables_wrapper .dataTables_paginate .paginate_button.disabled {
+  color: rgb(0, 0, 0) !important;
+}
+.dataTables_wrapper .dataTables_paginate .paginate_button.current {
+  color: rgb(0, 0, 0) !important;
+  border: 1px solid #969595;
+  background: linear-gradient(to bottom, rgb(0, 0, 0) 0%, #000000 100%);
+}
+.row .col.m6 {
+  border-bottom: 1px solid;
+}
+.row .col {
+  padding: 0 0.5rem;
+}
+.tabs .tab a {
+  padding: 0px 22px;
+}
+.tabs .indicator {
+  background-color: unset;
+}
+.chip {
+  color: rgb(0, 0, 0);
+  background-color: #797979;
+  border: 1px solid;
+  line-height: 28px;
+}
+.collection .collection-item {
+  border-bottom: 1px solid #000000;
+}
+
+
+/* header h5 {
+  content:url(../logo.png);
+  size: 50px;
+  margin: 0 auto;
+} */
+
+@media only screen and (min-width: 601px){
+  .row .col.m6 {
+    width: 100%;
+  }
+}
+.bordered{
+  color:rgb(250, 248, 248)
+}

@@ -1,0 +1,10 @@
+################seletores#################
+:p: 'P'
+:m: 'M'
+:g: 'G'
+:gg: 'GG'
+
+##################retorno esperado###########
+
+:indisponivel: 'Esse produto encontra-se indisponível.'
+:disponivel: 'COMPRAR'

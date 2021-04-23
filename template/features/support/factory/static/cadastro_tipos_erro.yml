@@ -1,0 +1,21 @@
+#massas para erro
+:cpf_erro_massa: '999.999.999-99'
+:nome_invalido_massa: 'Le'
+:email_invalido_massa: 'Jão'
+:senha_curta_massa: '123'
+:senha_diferente_massa1: '123456'
+:senha_diferente_massa2: '1234567'
+:cnpj_invalido_massa: '07.548.400/0142-26'
+
+#identificadores de erro
+:campos_obrigatorios: 'Campos obrigatórios'
+:cpf_invalido: 'CPF inválido'
+:nome_invalido: 'Nome curto'
+:sobrenome_invalido: 'Sobrenome curto'
+:email_invalido: 'E-mail inválido'
+:senha_curta: 'Senha curta'
+:senhas_diferentes: 'Senha diferente'
+
+#identificadores PJ
+:cnpj_invalido: 'CNPJ inválido'
+:razao_social_curta: 'Razão social curta'
