@@ -9,5 +9,5 @@ Quando('finalizar o cadastro de endereço') do
 end
 
 Então('deverá exibir a lista de endereços atualizada') do
-  expect(@meus_dados_page.retorna_alerta_sucesso).to have_content 'sucesso'
+  expect(@meus_dados_page.retorna_nome_endereco).to have_content @meus_dados_page.retorna_comparativo_nome_endereco
 end

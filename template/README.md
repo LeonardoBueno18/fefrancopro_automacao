@@ -12,7 +12,7 @@ https://medium.com/qaninja/instalando-ruby-cucumber-e-capybara-no-windows-10-acb
 #### Rspec
   Utilizada no projeto para realizar a comparação de valores descritos na documentação gherkin com os valores obtidos no html da aplicação.
 #### Site_prism
-  Utilizada no projeto para realizar a organização do código referente ao instanciamento de elementos html para a interação e execução de eventos. Facilita a utilização da orientação a objetos.
+  Utilizada no projeto para realizar a organização do código referente ao instanciamento de elementos html para a interação e execução de eventos. Facilita a utilização do Page Objects.
 #### Faker
   Utilizado para a geração de massas de dados estáticas e dinâmicas.
 #### Faker-cpf

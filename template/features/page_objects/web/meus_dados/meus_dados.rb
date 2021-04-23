@@ -29,7 +29,7 @@ module Web
         element :input_cep, '#postcode'
         element :input_numero, '#number'
         element :btn_cadastrar, '#btn-submit'
-        element :nome_endereco, 'li:nth-child(1) > div.address > span'
+        element :nome_endereco, 'div.customer-address-list > ul > li:nth-child(1) > div.address > span.name'
         element :btn_remover_segundo_endereco, 'ul > li:nth-child(2) #btn-remove > i'
 ############################################
 ########### Metodos de retornos e alertas #
