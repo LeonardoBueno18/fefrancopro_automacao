@@ -131,7 +131,7 @@ if ISPARALLELRUNNING
   # preparation:
   # affected by race-condition: first process may boot slower than the second
   # either sleep a bit or use a lock for example File.lock
-  ParallelTests.first_process? ? sleep(10) : sleep(1)
+  ParallelTests.first_process? ? sleep(2) : sleep(1)
 
   at_exit do
     if ParallelTests.first_process?

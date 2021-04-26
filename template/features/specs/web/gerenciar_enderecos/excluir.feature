@@ -1,5 +1,5 @@
 #language : pt
-@gerenciarenderecos
+@gerenciar_enderecos
 Funcionalidade: Endereço
 
 Contexto:

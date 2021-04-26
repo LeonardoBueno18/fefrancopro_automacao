@@ -31,7 +31,8 @@ module Factory
       {
         numero: '5155901222280001',
         titular: "Test Automation #{Faker::Name.first_name}",
-        validade: '1228',
+        validade_mes: '12',
+        validade_ano: '2028',
         cvv: '258'
       }
     end

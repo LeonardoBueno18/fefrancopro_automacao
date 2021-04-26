@@ -22,7 +22,7 @@ module Web
           @tipo_erro = Factory::Static.static_file('cadastro_tipos_erro')
           case tipo
           when @tipo_erro[:campos_obrigatorios]
-            cadastro_form.alertas.text
+            cadastro_form.alerta_telefone.text
           when @tipo_erro[:nome_invalido]
             cadastro_form.alerta_nome.text
 
@@ -107,7 +107,6 @@ module Web
           case tipo
           when @tipo_erro[:campos_obrigatorios]
             clicar_btn_cadastrar
-
           when @tipo_erro[:nome_invalido]
             cadastro_form.input_primeiro_nome.gset @tipo_erro[:nome_invalido_massa]
             clicar_btn_cadastrar
@@ -210,12 +209,7 @@ module Web
           @tipo_erro = Factory::Static.static_file('cadastro_tipos_erro')
           case tipo
           when @tipo_erro[:campos_obrigatorios]
-            @usuario = Factory::Dynamic.user
-            cadastro_form.input_primeiro_nome.gset ''
-            cadastro_form.input_sobrenome.gset ''
-
             clicar_btn_cadastrar
-
           when @tipo_erro[:nome_invalido]
             cadastro_form.input_primeiro_nome.gset @tipo_erro[:nome_invalido_massa]
             clicar_btn_cadastrar

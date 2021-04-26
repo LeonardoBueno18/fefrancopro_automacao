@@ -78,3 +78,26 @@ A pasta Web de Step Definitions contém os arquivos ruby com os métodos gerados
                                                     Web
                                                      |
     Acesso | Alterar Acesso | Autênticação | Dados Cadastrais | Gerenciar Endereços | Listagem | Produto
+
+### Como executar o teste automatizado e acessar os reports gerados automaticamente
+#### Pre-requisitos:
+É necessário que o ambiente, descrito no inicio com tutorial no link, esteja corretamente instalado.
+É necessário também que possua o template salvo no computador.
+#### Execução do teste:
+Usando o Cmder, acesse a pasta onde o template está localizado e execute o seguinte comando:
+
+              cucumber -t
+
+Esse comando fará o cucumber executar todas as features que estiverem contidas no template.
+
+              cucumber -t @tag_da_feature_desejada
+
+Esse comando fará o cucumber executar apenas as features com a tag associada.
+#### Acessando os reports gerados:
+Para acessar os reports gerados é necessário acessar a pasta reports
+
+                Template
+                    |
+          Features  |  Reports
+
+Ao acessar a pasta, após o teste, será gerado um arquivo de report chamado 'cucumber_web_report'.

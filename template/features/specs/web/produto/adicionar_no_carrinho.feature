@@ -5,7 +5,7 @@ Funcionalidade: Produto
 Contexto:
     Dado que esteja na página de informações do produto
 
-    @adicionar_ao_carrinho
+    @adicionar_ao_carrinho @paralelo
     Cenário: Adicionar no carrinho
         Quando adicionar o produto no carrinho
         Então deverá exibir um item adicionado no carrinho

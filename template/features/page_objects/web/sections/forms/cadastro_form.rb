@@ -22,6 +22,7 @@ module Web
         element :alerta_nome, '.firstnameformError'
         element :alerta_sobrenome, '.lastnameformError'
         element :alertas, '.formErrorContent'
+        element :alerta_telefone, '.telephoneformError'
         element :input_razao_social, '#company'
         element :input_nome_fantasia, '#company_fantasia'
         element :input_cnpj, '#cnpj'

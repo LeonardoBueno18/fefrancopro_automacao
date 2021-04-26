@@ -1,5 +1,5 @@
 #language : pt
-@gerenciarenderecos
+@gerenciar_enderecos
 Funcionalidade: Endereço
 
 Contexto:
@@ -9,15 +9,15 @@ Contexto:
     @editar_endereco
     Cenário: Editar endereço
         Quando editar os dados do endereço
-        Então deverá exibir a lista atualizada
+        Então deverá exibir o novo endereço como primeiro da lista
 
     @editar_endereco_exception
     Esquema do Cenário: Editar endereço exception
         Quando editar os dados do endereço com dados inválidos '<tipo>'
-        Então deverá exibir o '<erro>'
+        Então deverá exibir o erro '<erro>' no cadastro de endereço
 
         Exemplos:
-            |       tipo          |                erro                 |
-            | Campos obrigatórios | Esses campos são obrigatórios!      |
-            | Nome curto          | Permitido o minimo de 3 caracteres! |
-            | Sobrenome curto     | Permitido o minimo de 3 caracteres! |
+            |       tipo          |                erro                    |
+            | Campos obrigatórios | * Este campo é obrigatório             |
+            | Nome curto          | * Permitido o mínimo de 3 caractere(s) |
+            | Sobrenome curto     | * Permitido o mínimo de 3 caractere(s) |

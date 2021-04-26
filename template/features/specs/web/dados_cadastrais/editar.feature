@@ -1,5 +1,5 @@
 #language : pt
-@dadoscadastrais
+@dados_cadastrais
 Funcionalidade: Dados Cadastrais
 
 Contexto:

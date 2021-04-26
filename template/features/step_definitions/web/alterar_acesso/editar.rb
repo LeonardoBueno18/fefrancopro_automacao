@@ -1,5 +1,6 @@
 Dado('que esteja logado') do
   @login_page = $web_pages.login
+  @resumo_page = $web_pages.resumo
   @meus_dados_page = $web_pages.meus_dados
   @login_page.load
   @login_page.logar

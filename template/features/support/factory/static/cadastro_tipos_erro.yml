@@ -6,6 +6,8 @@
 :senha_diferente_massa1: '123456'
 :senha_diferente_massa2: '1234567'
 :cnpj_invalido_massa: '07.548.400/0142-26'
+:numero_cc_invalido_massa: '9999 9999 9999 9999'
+:codigo_cc_curto_massa: '11'
 
 #identificadores de erro
 :campos_obrigatorios: 'Campos obrigatórios'
@@ -15,6 +17,10 @@
 :email_invalido: 'E-mail inválido'
 :senha_curta: 'Senha curta'
 :senhas_diferentes: 'Senha diferente'
+:numero_cc_invalido: 'Número do Cartão inválido'
+:codigo_cc_curto: 'Código de segurança curto'
+:cupom_expirado: 'Expirado'
+:cupom_nao_existe: 'Não existente'
 
 #identificadores PJ
 :cnpj_invalido: 'CNPJ inválido'

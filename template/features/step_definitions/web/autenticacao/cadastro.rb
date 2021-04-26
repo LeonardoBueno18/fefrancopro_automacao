@@ -39,6 +39,7 @@ Então('deverá exibir as informações da nova conta') do
 end
 
 Então('deverá exibir o alerta PJ {string}') do |erro|
+
   expect(@cadastro_page.retorna_alertas_cadastro(@tipo)).to have_content erro
 
 end

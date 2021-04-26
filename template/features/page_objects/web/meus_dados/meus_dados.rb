@@ -1,4 +1,8 @@
 require_relative '../sections/menu/nav_menu.rb'
+require_relative '../sections/forms/cadastro_endereco_form.rb'
+require_relative '../sections/forms/cadastro_usuario_form.rb'
+require_relative '../sections/forms/senha_form.rb'
+
 module Web
   module Pages
     module MeusDados
@@ -9,28 +13,14 @@ module Web
         element :texto_usuario, '.profile-text'
         element :span_minha_conta, "span[itemprop='name']"
         section :nav_menu, Web::Sections::Menu::NavMenu, '.nav-menu'
+        section :form_endereco, Web::Sections::Forms::CadastroEnderecoForm, '#ck-address'
+        section :form_usuario, Web::Sections::Forms::CadastroUsuarioForm, '#ck-mydata'
+        section :form_senha, Web::Sections::Forms::SenhaForm, '#ck-access'
         element :alert_sucesso, '.alert-success  > span'
-        element :senha_atual, '#password_current'
-        element :nova_senha, '#password'
-        element :nova_senha_confirma, '#confirmation'
         element :btn_atualizar, '#btn-go'
-        element :alert_nova_senha_confirma, ' li:nth-child(2) > div'
-        element :alert_nova_senha, '.fields > li:nth-child(1) > div'
-        element :input_nome, '#firstname'
-        element :input_sobrenome, '#lastname'
-        element :input_telefone, '#telephone'
-        element :input_cpf, '#cpf'
-        element :alerta_telefone, '.telephoneformError'
-        element :alerta_nome, '.firstnameformError'
-        element :alerta_sobrenome, '.lastnameformError'
-        element :alerta_cpf, '.cpfformError'
         element :btn_novo_endereco, '.new-address'
-        element :input_apelido_endereco, '#label'
-        element :input_cep, '#postcode'
-        element :input_numero, '#number'
-        element :btn_cadastrar, '#btn-submit'
-        element :nome_endereco, 'div.customer-address-list > ul > li:nth-child(1) > div.address > span.name'
-        element :btn_remover_segundo_endereco, 'ul > li:nth-child(2) #btn-remove > i'
+        element :btn_editar_primeiro_endereço, '.customer-address-list ul  li:nth-child(1)  div.actions  a'
+        element :titulo_historico, '.section-title'
 ############################################
 ########### Metodos de retornos e alertas #
 ##########################################
@@ -38,33 +28,28 @@ module Web
           texto_usuario.greenify
           texto_usuario.text
         end
-        def remover_segundo_endereco
-          btn_remover_segundo_endereco.gclick
-        end
+
         def retornar_minha_conta
           span_minha_conta.greenify
           span_minha_conta.text
         end
         def retorna_alerta_telefone
-          alerta_telefone.text
+          form_usuario.alerta_telefone.text
         end
         def retorna_alerta_nome
-          alerta_nome.text
+          form_usuario.alerta_nome.text
         end
         def retorna_alerta_sobrenome
-          alerta_sobrenome.text
+          form_usuario.alerta_sobrenome.text
         end
         def retorna_alerta_cpf
-          alerta_cpf.text
-        end
-        def retorna_nome_endereco
-          nome_endereco.text
+          form_usuario.alerta_cpf.text
         end
 
-        def retorna_comparativo_nome_endereco
-          @usuario[:nome]
+        def retorna_titulo_historico
+          titulo_historico.greenify
+          titulo_historico.text
         end
-
         def retorna_alerta_sucesso
           alert_sucesso.text
         end
@@ -72,9 +57,9 @@ module Web
           @tipo_erro = Factory::Static.static_file('cadastro_tipos_erro')
           case tipo
           when @tipo_erro[:senha_curta]
-            alert_nova_senha.text
+            form_senha.alert_nova_senha.text
           when @tipo_erro[:senhas_diferentes]
-            alert_nova_senha_confirma.text
+            form_senha.alert_nova_senha_confirma.text
           else
             print "\n 404 - TIPO DE ERRO DE SENHA NÃO ENCONTRADO!!"
           end
@@ -101,6 +86,11 @@ module Web
           @texto_esperado = Factory::Static.static_file('texto_esperado')
           @texto_esperado[:sucesso]
         end
+        def retorna_texto_esperado_historico
+          @texto_esperado = Factory::Static.static_file('texto_esperado')
+          @texto_esperado[:historico_pedidos]
+        end
+
 ############################################
 ########### Metodos de ações e cliques ####
 ##########################################
@@ -108,8 +98,8 @@ module Web
           btn_atualizar.gclick
         end
 
-        def clica_btn_cadastrar
-          btn_cadastrar.gclick
+        def acessar_visualizar_pedidos
+          nav_menu.a_visualizar_pedidos.gclick
         end
 
         def acessar_alteracao_acesso
@@ -127,11 +117,15 @@ module Web
           btn_novo_endereco.gclick
         end
 
+        def acessar_edicao_primeiro_endereco
+          btn_editar_primeiro_endereço.gclick
+        end
+
         def troca_senha
           @usuario_fixo = Factory::Static.static_file('login')
-          senha_atual.gset @usuario_fixo[:senha]
-          nova_senha.gset @usuario_fixo[:senha]
-          nova_senha_confirma.gset @usuario_fixo[:senha]
+          form_senha.senha_atual.gset @usuario_fixo[:senha]
+          form_senha.nova_senha.gset @usuario_fixo[:senha]
+          form_senha.nova_senha_confirma.gset @usuario_fixo[:senha]
           clica_btn_atualizar
         end
 
@@ -140,13 +134,13 @@ module Web
           @tipo_erro = Factory::Static.static_file('cadastro_tipos_erro')
           case tipo
           when @tipo_erro[:senha_curta]
-            senha_atual.gset @usuario_fixo[:senha]
-            nova_senha.gset @tipo_erro[:senha_curta_massa]
-            nova_senha_confirma.gset @tipo_erro[:senha_curta_massa]
+            form_senha.senha_atual.gset @usuario_fixo[:senha]
+            form_senha.nova_senha.gset @tipo_erro[:senha_curta_massa]
+            form_senha.nova_senha_confirma.gset @tipo_erro[:senha_curta_massa]
           when @tipo_erro[:senhas_diferentes]
-            senha_atual.gset @usuario_fixo[:senha]
-            nova_senha.gset @usuario_fixo[:senha]
-            nova_senha_confirma.gset @tipo_erro[:senha_diferente_massa2]
+            form_senha.senha_atual.gset @usuario_fixo[:senha]
+            form_senha.nova_senha.gset @usuario_fixo[:senha]
+            form_senha.nova_senha_confirma.gset @tipo_erro[:senha_diferente_massa2]
           else
             print "\n 404 - TIPO DE ERRO DE SENHA NÃO ENCONTRADO!!"
           end
@@ -155,8 +149,8 @@ module Web
 
         def atualizar_dados_cadastrais
           @usuario_fixo = Factory::Static.static_file('login')
-          input_nome.gset @usuario_fixo[:nome]
-          input_sobrenome.gset @usuario_fixo[:sobrenome]
+          form_usuario.input_nome.gset @usuario_fixo[:nome]
+          form_usuario.input_sobrenome.gset @usuario_fixo[:sobrenome]
           clica_btn_atualizar
         end
 
@@ -164,28 +158,18 @@ module Web
           @tipo_erro = Factory::Static.static_file('cadastro_tipos_erro')
           case tipo
           when @tipo_erro[:campos_obrigatorios]
-            input_telefone.gset ''
+            form_usuario.input_telefone.gset ''
           when @tipo_erro[:nome_invalido]
-            input_nome.gset @tipo_erro[:nome_invalido_massa]
+            form_usuario.input_nome.gset @tipo_erro[:nome_invalido_massa]
           when @tipo_erro[:sobrenome_invalido]
-            input_sobrenome.gset @tipo_erro[:nome_invalido_massa]
+            form_usuario.input_sobrenome.gset @tipo_erro[:nome_invalido_massa]
           when @tipo_erro[:cpf_invalido]
-            input_cpf.gset @tipo_erro[:cpf_erro_massa]
+            form_usuario.input_cpf.gset @tipo_erro[:cpf_erro_massa]
           else
             print "\n 404 - TIPO DE ERRO NÃO ENCONTRADO!"
           end
         end
 
-        def adicionar_novo_endereco
-          @usuario = Factory::Dynamic.user
-          @endereco = Factory::Dynamic.address
-          input_apelido_endereco.gset @usuario[:apelido]
-          input_nome.gset @usuario[:nome]
-          input_sobrenome.gset @usuario[:apelido]
-          input_cep.gset @endereco[:cep]
-          input_numero.gset @endereco[:numero]
-          clica_btn_cadastrar
-        end
 
       end
     end

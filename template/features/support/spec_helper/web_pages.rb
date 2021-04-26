@@ -23,6 +23,18 @@ module Web
         def carrinho
           Web::Pages::Carrinho::CarrinhoPage.new
         end
+        def endereco
+          Web::Pages::Endereco::EnderecoPage.new
+        end
+        def envio
+          Web::Pages::Envio::EnvioPage.new
+        end
+        def pagamento
+          Web::Pages::Pagamento::PagamentoPage.new
+        end
+        def resumo
+          Web::Pages::Resumo::ResumoPage.new
+        end
       end
     end
   end

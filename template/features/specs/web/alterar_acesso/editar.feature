@@ -1,5 +1,5 @@
 #language : pt
-@alteraracesso
+@alterar_acesso
 Funcionalidade: Alterar acesso
 
 Contexto:

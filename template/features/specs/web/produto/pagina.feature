@@ -5,7 +5,7 @@ Funcionalidade: Produto
 Contexto:
     Dado que esteja na home
 
-    @pagina_do_produto
+    @pagina_do_produto @paralelo
     Cenário: Página
         Quando selecionar o primeiro produto da categoria camisetas
         Então deverá exibir a página de informações
