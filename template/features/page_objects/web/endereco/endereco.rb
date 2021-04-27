@@ -28,12 +28,15 @@ module Web
         end
 
         def retorna_alerta_nome
+          form_endereco.alerta_nome.greenify
           form_endereco.alerta_nome.text
         end
         def retorna_alerta_sobrenome
+          form_endereco.alerta_sobrenome.greenify
           form_endereco.alerta_sobrenome.text
         end
         def retorna_nome_endereco
+          nome_endereco.greenify
           nome_endereco.text
         end
 
@@ -42,6 +45,7 @@ module Web
         end
 
         def retorna_alerta_sucesso
+          alert_sucesso.greenify
           alert_sucesso.text
         end
 

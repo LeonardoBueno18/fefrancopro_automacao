@@ -50,6 +50,7 @@ module Web
           @usuario[:email]
         end
         def retorna_alerta_senha
+          alerta_senha.greenify
           alerta_senha.text
         end
         def retorna_validacao(erro)

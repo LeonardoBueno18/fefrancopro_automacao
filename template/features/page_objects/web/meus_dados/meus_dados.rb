@@ -34,15 +34,19 @@ module Web
           span_minha_conta.text
         end
         def retorna_alerta_telefone
+          form_usuario.alerta_telefone.greenify
           form_usuario.alerta_telefone.text
         end
         def retorna_alerta_nome
+          form_usuario.alerta_nome.greenify
           form_usuario.alerta_nome.text
         end
         def retorna_alerta_sobrenome
+          form_usuario.alerta_sobrenome.greenify
           form_usuario.alerta_sobrenome.text
         end
         def retorna_alerta_cpf
+          form_usuario.alerta_cpf.greenify
           form_usuario.alerta_cpf.text
         end
 
@@ -51,14 +55,17 @@ module Web
           titulo_historico.text
         end
         def retorna_alerta_sucesso
+          alert_sucesso.greenify
           alert_sucesso.text
         end
         def retorna_alerta_erro_senha (tipo)
           @tipo_erro = Factory::Static.static_file('cadastro_tipos_erro')
           case tipo
           when @tipo_erro[:senha_curta]
+            form_senha.alert_nova_senha.greenify
             form_senha.alert_nova_senha.text
           when @tipo_erro[:senhas_diferentes]
+            form_senha.alert_nova_senha_confirma.greenify
             form_senha.alert_nova_senha_confirma.text
           else
             print "\n 404 - TIPO DE ERRO DE SENHA NÃO ENCONTRADO!!"

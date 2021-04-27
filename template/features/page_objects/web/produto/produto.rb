@@ -22,6 +22,7 @@ module Web
 ########### Metodos de retornos e alertas #
 ##########################################
         def retorna_nome_produto
+          titulo_produto.greenify
           titulo_produto.text
         end
         def retorna_dispinibilidade (tamanho)

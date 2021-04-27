@@ -61,9 +61,11 @@ module Web
 ########### Metodos de retornos e alertas #
 ##########################################
         def retorna_nome_primeiro_produto
+          nome_primeiro_produto.greenify
           nome_primeiro_produto.text
         end
         def retorna_nome_pesquisa
+          h1_nome_produto.greenify
           h1_nome_produto.text
         end
       end
