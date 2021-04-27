@@ -91,8 +91,8 @@ at_exit do
     config.input_path = 'reports/'
     config.report_path = 'reports/cucumber_web_report'
     config.report_types = [:html]
-    config.report_title = 'compasso'
-    config.color = 'blue'
+    config.report_title = 'Compasso UOL - fefrancopro.com'
+    config.color = 'green'
     config.additional_css = 'css_report_builder.css'
     config.additional_info = {
       Browser: 'Chrome',

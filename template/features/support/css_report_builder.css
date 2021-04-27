@@ -1,10 +1,10 @@
 .white-text {
   color: rgb(0, 0, 0) !important;
 }
-.blue.lighten-1 {
+.green.lighten-1 {
   background-color: #0f0000 !important;
 }
-.blue.lighten-3 {
+.green.lighten-3 {
   background-color: #0c0000 !important;
 }
 body {
@@ -14,10 +14,10 @@ body {
 .tabs {
   margin: 0.5px auto;
 }
-.blue.lighten-5 {
+.green.lighten-5 {
   background-color: #070000 !important;
 }
-.blue.lighten-4 {
+.green.lighten-4 {
   background-color: #080000 !important;
 }
 .container {
@@ -66,7 +66,7 @@ th {
   line-height: 28px;
 }
 .collection .collection-item {
-  border-bottom: 1px solid #000000;
+  border-bottom: 1px solid #ffffff;
 }
 
 

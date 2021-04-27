@@ -51,7 +51,8 @@ when 'chrome'
         --log-level=3
       ]
     )
-
+    #executar headless
+    #options.add_argument('--headless')
     client = Selenium::WebDriver::Remote::Http::Default.new
     client.read_timeout = 90
     Capybara::Selenium::Driver.new(app, browser: :chrome, options: options, http_client: client)
@@ -59,8 +60,11 @@ when 'chrome'
 
 when 'firefox'
   Capybara.register_driver :firefox do |app|
+    options = Selenium::WebDriver::Firefox::Options
+    #executar headless
+    #options.add_argument('-headless')
     client = Selenium::WebDriver::Remote::Http::Default.new
-    Capybara::Selenium::Driver.new(app, :browser => :firefox, http_client: client)
+    Capybara::Selenium::Driver.new(app, :browser => :firefox, options: options, http_client: client)
 
   end
 else
